@@ -15,7 +15,13 @@ public class GatewayRoutesConfig {
     @Bean
     public CorsWebFilter corsWebFilter() {
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOriginPatterns(List.of("http://localhost:5173","https://peaceapp-web.netlify.app"));
+        config.setAllowedOriginPatterns(List.of(
+                "http://localhost:5173",
+                "https://peaceapp-web.netlify.app",
+                "https://peaceapp-webapp.netlify.app",
+                "https://peaceapp-landing.netlify.app",
+                "https://*.netlify.app"
+        ));
         config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         config.setAllowedHeaders(List.of("*"));
         config.setAllowCredentials(true);
